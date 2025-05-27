@@ -2,15 +2,9 @@
 
 ## Welcome to the Intermediate R Course
 
-<style>
-p {
-  text-align: justify;
-}
-</style>
 
-<p>
 This course is designed to enhance your knowledge of R programming with a focus on database management, statistical analysis, and data visualization. You will learn how to handle and manipulate data efficiently, perform advanced statistical analyses, and create compelling visualizations to communicate your findings effectively. Whether you're looking to develop your data science skills, this course will provide you with the essential tools to improve your R programming expertise.
-</p>
+
 
 ## Workshop Outline:
 
@@ -38,7 +32,7 @@ This course is designed to enhance your knowledge of R programming with a focus 
  1- [R for Data Science](https://r4ds.had.co.nz/)   
  2- [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)      
  3- [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)   
- 4- [Discovering Statistics Using R]()   
+ 4- Discovering Statistics Using R   
        
 
 ##  Extras  
@@ -72,10 +66,4 @@ l.zhou01@umcg.nl,
 PhD Student,University Medical Center Groningen, Cognitive Neuroscience Center,    
 University Medical Center Groningen (UMCG), The Netherlands. 
 
----
 
-<style>
-p, li {
-  text-align: justify;
-}
-</style>
