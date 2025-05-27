@@ -1,4 +1,4 @@
-# CNC-R_course
+# Best Practices in Writing Reproducible Code in R
 
 ## Welcome to the Intermediate R Course
 
