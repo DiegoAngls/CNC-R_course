@@ -62,7 +62,7 @@ University Medical Center Groningen, Cognitive Neuroscience Center,
 Biomedical Sciences of Cells and Systems (BCSS).   
 Twitter: [@diegoangls](https://twitter.com/diegoangls)  
 Bluesky:[@dangeles.bsky.social](https://bsky.app/profile/dangeles.bsky.social)   
-Email: d.angeles.valdez@umcg.nl  | diego.ang.val@gmail.com
+Email: d.angeles.valdez@umcg.nl  | diego.ang.val@gmail.com   
 Work address: Hanzeplein 1, 9713 GZ Groningen, The Netherlands
 
 Lan Zhou,       
