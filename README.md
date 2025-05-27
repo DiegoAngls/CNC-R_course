@@ -21,11 +21,11 @@ This course is designed to enhance your knowledge of R programming with a focus 
 
 # Contact 
 
-M. Sc. Diego Angeles Valdez, 
-d.angeles.valdez@umcg.nl | diego.ang.val@gmial.com
-PhD Student,University Medical Center Groningen, Cognitive Neuroscience Center, 
-Biomedical Sciences of Cells and Systems (BCSS).
-LANIREM (National MRI Laboratory), Institute of Neurobiology, Universidad Nacional Autónoma de México (UNAM), Querétaro, México.
+M. Sc. Diego Angeles Valdez,    
+d.angeles.valdez@umcg.nl | diego.ang.val@gmial.com,   
+PhD Student,University Medical Center Groningen, Cognitive Neuroscience Center,    
+Biomedical Sciences of Cells and Systems (BCSS),   
+LANIREM (National MRI Laboratory), Institute of Neurobiology, Universidad Nacional Autónoma de México (UNAM), Querétaro, México.   
 
 ---
 
