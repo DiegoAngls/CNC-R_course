@@ -31,7 +31,7 @@ This course is designed to enhance your knowledge of R programming with a focus 
  2- [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)      
  3- [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)   
  4- [Discovering Statistics Using R]()   
- 5- [An R companion to Statistical Thinking for the 21st Century(https://statsthinking21.github.io/statsthinking21-R-site/)   
+ 5- [An R companion to Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-R-site/)      
 
 ## References 
 
