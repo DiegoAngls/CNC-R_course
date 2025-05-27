@@ -41,7 +41,7 @@ This course is designed to enhance your knowledge of R programming with a focus 
  1- [ggplot2](https://r-graph-gallery.com/ggplot2-package.html)   
  2- [An R companion to Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-R-site/)   
  
-## References 
+## Remember to always say thank you 
 
 - Grolemund, G., & Wickham, H. (2016). R for data science: Import, tidy, transform, visualize, and model data. O'Reilly Media.
 
@@ -57,16 +57,19 @@ This course is designed to enhance your knowledge of R programming with a focus 
 # Contact 
 
 M. Sc. Diego Angeles Valdez,    
-d.angeles.valdez@umcg.nl | diego.ang.val@gmial.com,   
-PhD Student,University Medical Center Groningen, Cognitive Neuroscience Center,    
-University Medical Center Groningen (UMCG), The Netherlands,    
-LANIREM (National MRI Laboratory), Institute of Neurobiology, Universidad Nacional Autónoma de México (UNAM), Querétaro, México.   
+PhD Student,   
+University Medical Center Groningen, Cognitive Neuroscience Center,   
+Biomedical Sciences of Cells and Systems (BCSS).   
+Twitter: [@diegoangls](https://twitter.com/diegoangls)  
+Bluesky:[@dangeles.bsky.social](https://bsky.app/profile/dangeles.bsky.social)   
+Email: d.angeles.valdez@umcg.nl  | diego.ang.val@gmail.com
+Work address: Hanzeplein 1, 9713 GZ Groningen, The Netherlands
 
 Lan Zhou,       
 l.zhou01@umcg.nl,   
 PhD Student,University Medical Center Groningen, Cognitive Neuroscience Center,    
 University Medical Center Groningen (UMCG), The Netherlands. 
 
-
+![Alt text](https://github.com/DiegoAngls/IA2BC_LCLMM/blob/main/images/6_more_classification.jpg)
 
 
