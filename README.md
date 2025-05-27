@@ -14,10 +14,10 @@ This course is designed to enhance your knowledge of R programming with a focus 
 
 ## How to install R  and R studio (Posit)   
 
-# R   
+**R**   
 [Link to instal R]([https://www.genome.gov/](https://cran.r-project.org/bin/windows/base/)
 
-# Rstudio or Posit 
+**Rstudio or Posit**    
 [Link to instal R studio](https://cran.r-project.org/bin/windows/base/)
 
 *Note:* Remember to always have a stable and updated version of R and R studio.
@@ -27,11 +27,11 @@ This course is designed to enhance your knowledge of R programming with a focus 
 # Books 
 
   
- 1- [R for Data Science](https://r4ds.had.co.nz/)
- 2- [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)   
- 3- [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)
- 4- [Discovering Statistics Using R]()
- 5- [An R companion to Statistical Thinking for the 21st Century(https://statsthinking21.github.io/statsthinking21-R-site/)
+ 1- [R for Data Science](https://r4ds.had.co.nz/)   
+ 2- [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)      
+ 3- [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)   
+ 4- [Discovering Statistics Using R]()   
+ 5- [An R companion to Statistical Thinking for the 21st Century(https://statsthinking21.github.io/statsthinking21-R-site/)   
 
 ## References 
 
