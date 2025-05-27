@@ -18,7 +18,7 @@ This course is designed to enhance your knowledge of R programming with a focus 
 ## How to install R  and R studio (Posit)   
 
 **R**   
-[Link to instal R]([https://www.genome.gov/](https://cran.r-project.org/bin/windows/base/)
+[Link to instal R](https://cran.r-project.org/bin/windows/base/)   
 
 **Rstudio or Posit**    
 [Link to instal R studio](https://cran.r-project.org/bin/windows/base/)
@@ -66,5 +66,7 @@ Lan Zhou,
 l.zhou01@umcg.nl,   
 PhD Student,University Medical Center Groningen, Cognitive Neuroscience Center,    
 University Medical Center Groningen (UMCG), The Netherlands. 
+
+
 
 
