@@ -1,0 +1,47 @@
+Installing Packages in R
+To install any R package, use the following command:
+
+install.packages("package_name")
+
+For example, to install the dplyr package:
+
+install.packages("dplyr")
+
+Recommended Packages to Install
+
+# Data Cleaning and Data Management  
+
+tidyverse (includes ggplot2, dplyr, tidyr, and more)
+dplyr (for data manipulation)
+mice (for multiple imputation of missing data)
+
+# Reading Data  
+haven (for reading SPSS, SAS, and Stata files)
+openxlsx (for reading and writing Excel files)
+
+# Summarizing Data  
+
+psych (psychological research tools)
+table1 (for creating descriptive tables)
+summarytools (for detailed summaries)
+
+# Visualization  
+
+ggplot2 (creating advanced graphics)
+ggpubr (publication-ready plots)
+colourpiker (color palettes)
+ 
+# Statistical Analysis  
+
+corrplot (visualizing correlation matrices)
+lme4 (linear and nonlinear mixed-effects models)
+emmeans(Estimated Marginal Means, aka Least-Squares Means)
+
+# Additional Tools  
+
+pacman (package management tool for easier package loading and installation)
+
+You can use the following command 
+
+install.packages(c("tidyverse", "dplyr", "mice", "haven", "openxlsx", "psych", "table1", "summarytools", "ggplot2", "ggpubr", "colourpiker", "corrplot", "lme4", "pacman"))
+
