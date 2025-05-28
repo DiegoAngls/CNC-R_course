@@ -70,6 +70,3 @@ l.zhou01@umcg.nl,
 PhD Student,University Medical Center Groningen, Cognitive Neuroscience Center,    
 University Medical Center Groningen (UMCG), The Netherlands. 
 
-![Alt text](https://github.com/DiegoAngls/IA2BC_LCLMM/blob/main/images/6_more_classification.jpg)
-
-
