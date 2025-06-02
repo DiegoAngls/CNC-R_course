@@ -42,7 +42,7 @@ This course is designed to enhance your knowledge of R programming with a focus 
  2- [An R companion to Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-R-site/)   
 
 ###  Posit Cheatsheets
- 1- [Posit Cheatsheets_1](https://r-graph-gallery.com/ggplot2-package.html) 
+ 1- [Posit Cheatsheets_1](https://r-graph-gallery.com/ggplot2-package.html)    
  2- [Posit Cheatsheets_2](https://posit.co/resources/cheatsheets/)
  
 ## Remember to always say thank you 
