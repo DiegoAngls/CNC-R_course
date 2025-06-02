@@ -40,6 +40,9 @@ This course is designed to enhance your knowledge of R programming with a focus 
 
  1- [ggplot2](https://r-graph-gallery.com/ggplot2-package.html)   
  2- [An R companion to Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-R-site/)   
+
+### 
+ 1- [Posit Cheatsheets](https://r-graph-gallery.com/ggplot2-package.html) 
  
 ## Remember to always say thank you 
 
