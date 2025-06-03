@@ -1,0 +1,323 @@
+---
+title: 'R workshop: data check and data cleaning tips'
+author: "Lan Zhou"
+date: "2025/5/30"
+output:
+  html_document:
+    number_sections: true   # Adds section numbers
+    toc: true               # Adds table of contents
+    toc_depth: 3            # Controls levels shown in the TOC
+    toc_float: true         #  Makes TOC float while scrolling
+    theme: readable       # Changes overall font style and layout
+    highlight: tango      # Code syntax highlighting
+    df_print: paged
+---
+
+
+# Abstract
+
+This workshop introduces best practices for writing reproducible and maintainable R code, 
+including using RStudio, organizing code in R Notebooks, and performing data cleaning efficiently.
+
+
+
+# Preparation
+
+## load packages
+```{r}
+library(haven)
+library(openxlsx)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(here)
+library(table1)
+
+```
+
+
+## set seeds
+
+The set. seed( ) function in R ensures that random number generation is consistent across different sessions, allowing for identical results each time the code is executed. This is particularly important when sharing code with others or when results need to be verified.
+
+```{r}
+set.seed(123)
+```
+
+## use relative path
+If you use relative path, your code can work on any computer, not just your own.
+Great for team projects or sharing your code (e.g., via GitHub or email).
+
+```{r}
+
+setwd("C:/Users/Lauren/Desktop/CNC-R_course-main/")
+
+here::here()   # Check where here() thinks the root is
+
+```
+
+## read data
+
+- data naming rules: consistent, clear, easy to track, cannot start from number, avoid special mark
+- read.csv(), to read csv file
+- read.xlsx(), to read excel file
+- read_sav() , to read SPSS file
+- You can also import dataset by clicking the "Import Dataset" in the area of Environment!
+
+```{r}
+
+df_BIS <- read.csv(here("data","SUDMEX_BIS.csv"))
+df_BIS_dict <- read.xlsx(here("data","SUDMEX_BIS.xlsx"))    # only read the first sheet by default
+df_BIS_data <- read.xlsx(here("data","SUDMEX_BIS.xlsx"),sheet = "data")   # read different sheets
+
+
+# Can you read the data named "SUDMEX_HDRS.csv"?
+# df_HDRS <- read.csv(here("data","SUDMEX_HDRS.csv"))
+
+
+```
+
+# Preview data
+
+## check the first few rows
+```{r}
+head(df_BIS)
+
+names(df_BIS)   # check the variable names
+
+```
+
+## View the data structure and data types
+```{r}
+str(df_BIS)
+
+```
+
+## Get summary statistics
+```{r}
+summary(df_BIS)
+
+```
+
+
+```{r}
+library(summarytools)
+dfSummary(df_BIS)
+
+
+descr(df_BIS)
+
+
+```
+
+
+# Data check and data cleaning
+
+## check for missing values
+
+More complicated missing patterns could be solved using methods from: https://www.sciencedirect.com/science/article/pii/S1878929325000581?via%3Dihub#da1
+
+```{r}
+
+# check one spcific column
+anyNA(df_BIS$q1)
+
+# Can you check if the column "tot_score" has any missing value? please write down your codes:
+
+
+# check the whole dataset
+colSums(is.na(df_BIS))
+
+```
+
+## check for data types
+Ensure variables are the correct class (numeric, factor, character, Date)
+```{r}
+sapply(df_BIS, class)
+
+```
+
+- Group should be a factor. You can use as.factor() function to transfer the data type.
+- For data should be numeric, you can use as.numeric() function.
+- For data should be character, you can use as.character() function.
+
+```{r}
+df_BIS$group <- as.factor(df_BIS$group)   # you can also use df_BIS$group <- factor(df_BIS$group)
+
+class(df_BIS$group)   # check if it is factor now
+
+```
+
+
+
+## check for duplicates
+```{r}
+sum(duplicated(df_BIS))
+
+
+```
+
+##  Check distributions and outliers
+
+You can also use ggplot to plot the figures and ggsave() to save figures. Due to the short time, I only introduce the simple and easier way to do everything.
+```{r}
+boxplot(df_BIS$tot_score)
+
+
+# plot the histgram, with a size of width = 800mm, height = 600 mm, resolution is 300
+png(here("figure","histogram_cog.png"), width = 800, height = 600,res = 300)
+hist(df_BIS$cog)
+
+
+dev.off()
+
+print(hist(df_BIS$cog))
+
+```
+
+## Validate categorical variables
+
+table () can tell you the unique values and their counts
+
+```{r}
+unique(df_BIS$rid)
+
+
+table(df_BIS$rid)  # table () can tell you the unique values and their counts
+
+
+# can you check how many perons in different groups?
+
+```
+
+## rename variables
+use dplyr::rename() function, new_name = old_name
+
+```{r}
+
+df_BIS <- df_BIS %>%
+  rename(
+    participant_id = rid,
+    cognition = cog,
+    motor = mot
+  )
+
+```
+
+## compute row sums
+- You can use the rowSums() function to compute the row sum.
+- Use na.rm = TRUE to ignore NAs.
+- For complex computation, you can use dplyr::select() to select your variables first, then compute.
+- %>% is called the pipe operator, which looks like a series of logical steps.
+```{r}
+# for simple version
+df_BIS$tot_score_q1_5 <- rowSums(df_BIS[, c("q1", "q2", "q3", "q4", "q5")], na.rm = TRUE)
+
+
+
+df_BIS$total_score_q1_30 <- df_BIS %>%
+  select(q1:q30) %>%    # select q1:q30
+  rowSums(na.rm = TRUE)
+
+```
+
+
+
+## reocode and transform variables
+- You can use recode to relabel fixed values
+- You can use case_when() function to add more complex conditions and transform data.
+
+```{r}
+df_BIS <- df_BIS %>%
+  mutate(
+    group = recode(group,
+                   "1" = "patient",
+                   "2" = "control")
+  )
+
+
+
+df_BIS <- df_BIS %>%
+  mutate(
+    score_level = case_when(   # new variable name is score_level
+      total_score_q1_30 >= 0  & total_score_q1_30 < 20 ~ "low",
+      total_score_q1_30 >= 20 & total_score_q1_30 <= 50 ~ "moderate",
+      total_score_q1_30 > 50  ~ "high",
+      TRUE ~ NA_character_  # handles missing or unexpected values
+    )
+  )
+
+
+
+```
+
+
+
+## select variables and filter participants
+
+You can use dylpr package to filter dataset with mutiple conditions. You can also use subset() function in Base R.
+```{r}
+df_BIS_baseline <-  df_BIS %>%
+  filter(stage == "T0")
+
+df_BIS_baseline_subset <-  df_BIS %>%
+  filter(stage == "T0") %>%
+  select(participant_id, group, cognition, motor, nonp, tot_score)
+
+df_BIS_subset_baseline_patiens <-  df_BIS %>%
+  filter(stage %in% c("T0","T1")) %>%
+  select(participant_id, group, stage, cognition, motor, nonp, tot_score) %>%
+  filter(group == "patients")
+
+write.csv(df_BIS_baseline_subset,"output/df_BIS_baseline.csv")
+
+```
+
+## merge two datasets into one
+
+```{r}
+head(df_BIS)
+names(df_BIS)
+
+head(df_HDRS)
+names(df_HDRS)
+
+
+```
+You can use merge()function to merge two datasets by some common variables.
+Make sure that the key variable names are the same in the two datasets.
+
+```{r}
+# rename the rid in the HDRS dataset
+df_HDRS <- df_HDRS %>%
+  rename("participant_id" = "rid")
+
+# merge two datasets based on common variables like participate id and stage
+df_merged <- merge(df_BIS,df_HDRS, by = c("participant_id","stage"),all = TRUE)
+
+```
+
+
+## save the merged dataset
+```{r}
+write.csv(df_merged,here("output","df_merged.csv"))
+
+write_sav(df_merged,here("output","df_merged.sav"))    # save the data as sav file, which is readable in SPSS.
+
+
+write_rds(df_BIS, file = here("output", "df_BIS.rds"))  # save the file as .rds
+
+```
+
+
+# Create your table 1
+You can find more details here: https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html
+
+```{r}
+# To create the table 1 according to the group (patient and control)
+
+table1(~  cognition + motor | group, data=df_BIS_baseline_subset)
+
+```
+
+
